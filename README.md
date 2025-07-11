@@ -1,42 +1,45 @@
-# YOLOv3
+# YOLOv8 with Raspberry Pi Camera (Raspberry Pi 5)
 
-# Real-Time Object Detection with YOLOv3 in Google Colab
+This project runs YOLOv8 (large model) with real-time object detection using the Raspberry Pi Camera.
 
-## 📌 Project Summary
+## 🚀 Setup
 
-This project demonstrates a real-time object detection system using **YOLOv3** in **Google Colab**. It processes static video input and overlays bounding boxes and class labels for detected objects.
+### 1. Install Dependencies
 
-## 🧰 Tech Stack
-- Python
-- OpenCV
-- NumPy
-- YOLOv3 (Darknet)
-- FFmpeg
-- Google Colab
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install python3-pip python3-venv libopencv-dev python3-opencv -y
+```
 
-## 🚀 Key Features
-- 🧠 YOLOv3 deep learning-based detection on video input
-- 🎯 Class-wise Non-Maximum Suppression (NMS) for filtering overlapping boxes
-- 📦 Frame-by-frame video processing with annotated outputs
-- 🎞️ Conversion of output to MP4 using FFmpeg for easy sharing/viewing
+### 2. Create Virtual Environment
 
-## 🛠️ Workflow Summary
-1. Load YOLOv3 model (`yolov3.cfg`, `yolov3.weights`)
-2. Process input video (`video3.mp4`) using OpenCV
-3. Perform detection, apply NMS, and draw labels
-4. Save processed video and convert to `.mp4` for Colab preview
+```bash
+python3 -m venv yolov8env
+source yolov8env/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
 
-## 📁 Files Required
-- `yolov3.cfg`
-- `yolov3.weights`
-- `coco.names`
-- `video3.mp4`
+### 3. Download YOLOv8l Model
 
-## 📂 Output Files
-- `output.avi`: Raw processed video with annotations
-- `output.mp4`: Converted MP4 video ready for playback
+```bash
+wget https://github.com/ultralytics/assets/releases/download/v8.0.0/yolov8l.pt
+```
 
-## 🖼️ Output Preview
-The 10th frame is previewed in Colab using `cv2_imshow`, and full video is rendered in-browser using base64 HTML embedding.
+### 4. Run the Program
 
----
+```bash
+python3 main.py
+```
+
+Press `q` to exit.
+
+## 🐢 Note
+YOLOv8l is heavy. For better performance, use:
+```python
+model = YOLO("yolov8n.pt")
+```
+Download:
+```bash
+wget https://github.com/ultralytics/assets/releases/download/v8.0.0/yolov8n.pt
+```
