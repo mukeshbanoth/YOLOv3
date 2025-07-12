@@ -39,3 +39,11 @@ This project demonstrates a real-time object detection system using **YOLOv3** i
 The 10th frame is previewed in Colab using `cv2_imshow`, and full video is rendered in-browser using base64 HTML embedding.
 
 ---
+
+## 🔗 Download Model Files
+
+Due to GitHub size limits, you can download these files from the official sources:
+
+- [yolov3.weights](https://pjreddie.com/media/files/yolov3.weights)
+- [yolov3.cfg](https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg)
+
